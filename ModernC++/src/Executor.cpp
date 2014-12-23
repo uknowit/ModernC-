@@ -6,7 +6,9 @@
  */
 #include "../include/LocalClasses.hpp"
 #include "../include/PartialTemplateSpecialization.hpp"
+#include "../include/Int2Type.hpp"
 #include <string>
+
 int main()
 {
 	cout<<"Starting Execution......."<<endl;
