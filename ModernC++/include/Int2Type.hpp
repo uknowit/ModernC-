@@ -22,25 +22,30 @@ template<int v> struct Int2Type
 
 template <class T,bool isPolyMorphic> class NiftyCounter
 {
-public:
-	NiftyCounter(){mObj=new T;}
 
-	~NiftyCounter(){delete mObj;}
-
-	void doSomeThing()
-	{
-		if(isPolyMorphic)
-		{
-			mObj.printFunc();
-			cout<<"Object is polymorphic"<<endl;
-		}
-		else
-		{
-			cout<<"Object is non-polymorphic"<<endl;
-		}
-	}
 private:
-	T* mObj;
+	void doSomeThing(T* pObj,Int2Type<true>)
+	{
+			pObj->printFunc();
+			cout<<"Object is polymorphic"<<endl;
+	}
+
+	void doSomeThing(T* obj,Int2Type<false>)
+	{
+			cout<<"Object is non-polymorphic"<<endl;
+	}
+
+
+public:
+	NiftyCounter(){}
+
+	~NiftyCounter(){}
+
+	void DoSomeThing(T* obj)
+	{
+		doSomeThing(obj,Int2Type<isPolyMorphic>());
+	}
+
 };
 
 #endif /* INCLUDE_INT2TYPE_HPP_ */

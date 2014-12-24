@@ -7,6 +7,7 @@
 #include "../include/LocalClasses.hpp"
 #include "../include/PartialTemplateSpecialization.hpp"
 #include "../include/Int2Type.hpp"
+#include "../include/Type2Type.hpp"
 #include <string>
 
 int main()
@@ -32,5 +33,15 @@ int main()
 	//Int2Type
 	NiftyCounter<Window,true> niftyCounter;
 	niftyCounter.DoSomeThing(new Window);
+
+	//Type2Type
+	std::string nameArg="Shashi";
+	std::string lastArg="Kumar";
+	Test tt(lastArg); //Overhead of creating additional object to overload functionTemplate
+	Test* T = create(nameArg,tt);
+	delete T;
+	std::cout<<"=============="<<std::endl;
+	Test* T1 = Create(nameArg,Type2Type<Test>());
+	delete T1;
 	return 0;
 }
