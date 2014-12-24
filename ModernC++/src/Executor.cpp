@@ -29,6 +29,8 @@ int main()
 	wid.WidgetFunc();
 	widFull.WidgetFunc();
 
-	//
+	//Int2Type
+	NiftyCounter<Window,true> niftyCounter;
+	niftyCounter.DoSomeThing(new Window);
 	return 0;
 }
