@@ -32,7 +32,7 @@ Test* create(const U& arg,Test) {
 
 template <typename T>
 struct Type2Type {
-	typedef T OriginalType;
+	//typedef T OriginalType;
 };
 
 template <class T,class U>

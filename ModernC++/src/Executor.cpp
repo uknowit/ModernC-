@@ -8,6 +8,7 @@
 #include "../include/PartialTemplateSpecialization.hpp"
 #include "../include/Int2Type.hpp"
 #include "../include/Type2Type.hpp"
+#include "../include/TypeSelection.hpp"
 #include <string>
 
 int main()
