@@ -23,8 +23,14 @@ class Conversion {
 	static T MakeT();
 public:
 	enum {exists=sizeof(Test(MakeT()))==sizeof(Small)};
+	enum {sameType=0};
 };
 
+template <class T> class Conversion <T,T>
+{
+public:
+	enum {exists=1,sameType=1};
+};
 
 
 
