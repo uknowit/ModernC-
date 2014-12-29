@@ -9,6 +9,7 @@
 #include "../include/Int2Type.hpp"
 #include "../include/Type2Type.hpp"
 #include "../include/TypeSelection.hpp"
+#include "../include/Convertible.hpp"
 #include <string>
 
 int main()
@@ -44,5 +45,10 @@ int main()
 	std::cout<<"=============="<<std::endl;
 	Test* T1 = Create(nameArg,Type2Type<Test>());
 	delete T1;
+
+	//Convertibility
+	std::cout<<Conversion<double,int>::exists <<" "<<
+			Conversion<char,char*>::exists <<" "<<
+			Conversion<size_t,std::vector<int> >::exists;
 	return 0;
 }
