@@ -49,6 +49,7 @@ int main()
 	//Convertibility
 	std::cout<<Conversion<double,int>::exists <<" "<<
 			Conversion<char,char*>::exists <<" "<<
-			Conversion<size_t,std::vector<int> >::exists;
+			Conversion<size_t,std::vector<int> >::exists<<endl;
+	std::cout<<SUPERSUBCLASS(Controller,MyController)<<std::endl;
 	return 0;
 }
